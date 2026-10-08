@@ -5,86 +5,77 @@
 @layer base {
     body {
         font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-        background-color: #070a13;
-        color: #f1f5f9;
+        background-color: #f8fafc;
+        color: #0f172a;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Custom sleek dark scrollbar */
+    /* Dark mode background if active */
+    .dark body {
+        background-color: #0b0f17;
+        color: #f1f5f9;
+    }
+
+    /* Clean subtle scrollbar */
     ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
     }
     ::-webkit-scrollbar-track {
-        background: #070a13;
+        background: transparent;
     }
     ::-webkit-scrollbar-thumb {
-        background: #1e293b;
-        border-radius: 9999px;
+        background: #cbd5e1;
+        border-radius: 4px;
     }
-    ::-webkit-scrollbar-thumb:hover {
+    .dark ::-webkit-scrollbar-thumb {
         background: #334155;
     }
 }
 
 @layer utilities {
+    [x-cloak] {
+        display: none !important;
+    }
+
     .font-mono-num {
         font-family: 'JetBrains Mono', monospace;
         font-variant-numeric: tabular-nums;
     }
 
-    /* Sleek fintech glass card */
-    .fintech-card {
-        background: rgba(14, 20, 36, 0.75);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
-        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Stripe / Wise styled solid cards */
+    .card-solid {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.875rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
     }
-    
-    .fintech-card:hover {
-        border-color: rgba(255, 255, 255, 0.16);
-    }
-
-    .fintech-card-glow {
-        background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.06), transparent 70%), rgba(14, 20, 36, 0.8);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(16, 185, 129, 0.2);
-        box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.15), 0 10px 40px -10px rgba(0, 0, 0, 0.7);
+    .dark .card-solid {
+        background-color: #111726;
+        border-color: #1e293b;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
     }
 
-    .fintech-input {
-        background: rgba(11, 15, 25, 0.85);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Professional crisp inputs */
+    .input-solid {
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.625rem;
+        color: #0f172a;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .input-solid:focus {
+        border-color: #0f172a;
+        box-shadow: 0 0 0 1px #0f172a;
+    }
+    .dark .input-solid {
+        background-color: #0d121f;
+        border-color: #334155;
         color: #f8fafc;
-        transition: all 0.2s ease;
     }
-
-    .fintech-input:focus {
-        border-color: #10b981;
-        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
-        background: rgba(14, 20, 36, 0.95);
-    }
-
-    /* Gradient text utility */
-    .text-gradient-emerald {
-        background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #06b6d4 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .text-gradient-cyan {
-        background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 50%, #3b82f6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .text-gradient-indigo {
-        background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #6366f1 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    .dark .input-solid:focus {
+        border-color: #94a3b8;
+        box-shadow: 0 0 0 1px #94a3b8;
     }
 }
