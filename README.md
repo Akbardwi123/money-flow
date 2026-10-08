@@ -1,58 +1,158 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="320" alt="Laravel Logo">
 </p>
 
-## About Laravel
+<h1 align="center">💸 MoneyFlow — Smart Financial & Surplus Investment Management</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  Aplikasi manajemen keuangan cerdas berbasis <b>Laravel</b> untuk mengontrol arus kas, memisahkan pengeluaran prioritas vs fleksibel, dan mengalokasikan <i>surplus kas</i> ke instrumen investasi finansial serta investasi keahlian (skill).
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center">
+  <a href="https://php.net"><img src="https://img.shields.io/badge/PHP-8.3-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.3"></a>
+  <a href="https://laravel.com"><img src="https://img.shields.io/badge/Laravel-11%2B-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"></a>
+  <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"></a>
+  <a href="https://vitejs.dev"><img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"></a>
+  <a href="https://mysql.com"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License"></a>
+</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🌟 Fitur Utama (Key Features)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 1. 📊 Real-Time Surplus & Health Indicator
+- Perhitungan otomatis **Gross Surplus** dari `Total Pemasukan - Total Pengeluaran`.
+- Indikator status kesehatan finansial dinamis:
+  - 🟢 **Healthy** (Surplus positif)
+  - 🟡 **Balanced** (Imbang)
+  - 🔴 **Deficit** (Pengeluaran melebihi pemasukan)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. 💵 Pencatatan Pemasukan (Incomes)
+- Manajemen pencatatan berbagai sumber pemasukan (Gaji, Freelance, Bonus, Dividen, dll.) beserta filter periode bulan dan tahun.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### 3. 🎯 Pemisahan Pengeluaran Cerdas (Expenses)
+- **Priority Expenses**: Pengeluaran wajib & kebutuhan primer (Sewa tempat tinggal, makanan pokok, tagihan, cicilan).
+- **Flexible Expenses**: Pengeluaran sekunder & tersier (Hiburan, jajan, belanja gaya hidup) dengan rasio persentase real-time terhadap total income.
 
-## Agentic Development
+### 4. 🚀 Surplus Investment Allocation Hub
+Fitur unggulan untuk mengalokasikan sisa uang lebih (surplus):
+- 📈 **Financial Investment**: Reksadana, Saham, Emas, Deposito, Crypto.
+- 📚 **Skill & Knowledge Investment**: Kursus, buku, sertifikasi, seminar (*investasi leher ke atas*).
+- Validasi sisa kuota surplus agar tidak over-alokasi (*exceeding surplus protection*).
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### 5. 📑 Laporan & Ekspor Data (Reports)
+- Visualisasi grafik distribusi alokasi dan pengeluaran.
+- Ekspor ringkasan laporan keuangan ke format **CSV**.
+- Fitur **Demo 1-Click Login** untuk mencoba aplikasi secara instan.
 
-```bash
-composer require laravel/boost --dev
+---
 
-php artisan boost:install
+## 📐 Formula Finansial
+
+```text
+┌────────────────────────────────────────────────────────┐
+│  Gross Surplus = Total Incomes - Total Expenses        │
+└───────────────────────────────────┬────────────────────┘
+                                    │
+       ┌────────────────────────────┴───────────────────────────┐
+       ▼                                                        ▼
+[ Financial Investment ]                                [ Skill Investment ]
+ (Saham, Reksadana, Emas)                              (Buku, Kursus, Seminar)
+       │                                                        │
+       └────────────────────────────┬───────────────────────────┘
+                                    │
+                                    ▼
+           [ Remaining Unallocated Surplus (Dana Cadangan) ]
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## 🛠️ Tech Stack
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Backend:** [Laravel](https://laravel.com/) (PHP 8.3)
+- **Frontend:** [Blade Templates](https://laravel.com/docs/blade), [Tailwind CSS](https://tailwindcss.com/), [Alpine.js](https://alpinejs.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Database:** [MySQL](https://www.mysql.com/) / [SQLite](https://sqlite.org/)
+- **Auth & Starter:** [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze)
+- **Testing:** [PHPUnit](https://phpunit.de/)
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🚀 Panduan Instalasi Lokal (Getting Started)
 
-## Security Vulnerabilities
+### Prasyarat
+- PHP >= 8.3
+- Composer
+- Node.js & NPM
+- MySQL / MariaDB (atau Laragon)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Langkah-langkah
 
-## License
+1. **Clone repository:**
+   ```bash
+   git clone https://github.com/Akbardwi123/money-flow.git
+   cd money-flow
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. **Install dependensi PHP & Node:**
+   ```bash
+   composer install
+   npm install
+   ```
+
+3. **Salin konfigurasi environment:**
+   ```bash
+   cp .env.example .env
+   ```
+
+4. **Generate Application Key:**
+   ```bash
+   php artisan key:generate
+   ```
+
+5. **Konfigurasi Database di `.env`:**
+   Sesuaikan konfigurasi database:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=money_flow
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+6. **Jalankan Migrasi & Seeder Database:**
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+
+7. **Build asset frontend & Jalankan Server:**
+   ```bash
+   npm run build
+   php artisan serve
+   ```
+   Aplikasi siap diakses melalui: [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 🧪 Menjalankan Pengujian (Testing)
+
+Proyek ini telah dilengkapi dengan suite Feature Test:
+```bash
+php artisan test
+```
+
+---
+
+## 👤 Akun Uji Coba (Demo Credentials)
+
+Gunakan tombol **Demo Login** di halaman awal atau kredensial default seeder:
+- **Email:** `user@moneyflow.test`
+- **Password:** `password`
+
+---
+
+## 📄 Lisensi
+
+Proyek ini berada di bawah lisensi [MIT License](LICENSE).
