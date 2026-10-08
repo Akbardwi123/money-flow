@@ -5,7 +5,7 @@
 <h1 align="center">💸 MoneyFlow — Smart Financial & Surplus Investment Management</h1>
 
 <p align="center">
-  Aplikasi manajemen keuangan cerdas berbasis <b>Laravel</b> untuk mengontrol arus kas, memisahkan pengeluaran prioritas vs fleksibel, dan mengalokasikan <i>surplus kas</i> ke instrumen investasi finansial serta investasi keahlian (skill).
+  A modern, high-precision personal finance management web application built with <b>Laravel</b> to track cash flow, categorize priority vs. flexible expenses, and allocate <i>net surplus</i> into financial assets and skill development roadmaps.
 </p>
 
 <p align="center">
@@ -19,36 +19,37 @@
 
 ---
 
-## 🌟 Fitur Utama (Key Features)
+## 🌟 Key Features
 
-### 1. 📊 Real-Time Surplus & Health Indicator
-- Perhitungan otomatis **Gross Surplus** dari `Total Pemasukan - Total Pengeluaran`.
-- Indikator status kesehatan finansial dinamis:
-  - 🟢 **Healthy** (Surplus positif)
-  - 🟡 **Balanced** (Imbang)
-  - 🔴 **Deficit** (Pengeluaran melebihi pemasukan)
+### 1. 📊 Real-Time Surplus & Financial Health Engine
+- Automatically computes **Gross Surplus** using `Total Income - Total Expenses`.
+- Dynamic financial health indicator:
+  - 🟢 **Healthy** (Positive surplus)
+  - 🟡 **Balanced** (Break-even cash flow)
+  - 🔴 **Deficit** (Expenses exceed income)
 
-### 2. 💵 Pencatatan Pemasukan (Incomes)
-- Manajemen pencatatan berbagai sumber pemasukan (Gaji, Freelance, Bonus, Dividen, dll.) beserta filter periode bulan dan tahun.
+### 2. 💵 Income Stream Management
+- Record multiple income streams (Salary, Freelance, Business, Dividends, Asset Liquidation, etc.).
+- Filter transactions by month and year with instant summary recalculations.
 
-### 3. 🎯 Pemisahan Pengeluaran Cerdas (Expenses)
-- **Priority Expenses**: Pengeluaran wajib & kebutuhan primer (Sewa tempat tinggal, makanan pokok, tagihan, cicilan).
-- **Flexible Expenses**: Pengeluaran sekunder & tersier (Hiburan, jajan, belanja gaya hidup) dengan rasio persentase real-time terhadap total income.
+### 3. 🎯 Smart Expense Categorization
+- **Priority Expenses**: Essential and obligatory living costs (Housing, groceries, utilities, debt servicing, insurance).
+- **Flexible Expenses**: Lifestyle and discretionary spending (Dining out, entertainment, shopping, hobbies) with real-time budget ratio tracking.
 
 ### 4. 🚀 Surplus Investment Allocation Hub
-Fitur unggulan untuk mengalokasikan sisa uang lebih (surplus):
-- 📈 **Financial Investment**: Reksadana, Saham, Emas, Deposito, Crypto.
-- 📚 **Skill & Knowledge Investment**: Kursus, buku, sertifikasi, seminar (*investasi leher ke atas*).
-- Validasi sisa kuota surplus agar tidak over-alokasi (*exceeding surplus protection*).
+A dedicated allocation hub to direct remaining surplus funds into productive growth:
+- 📈 **Financial Investments**: Stocks, Mutual Funds, Bonds/SBN, Gold, High-Yield Savings, Crypto.
+- 📚 **Skill & Knowledge Investments**: Books, professional certifications, coding bootcamps, courses, and mentoring.
+- Built-in allocation safeguards to prevent over-allocation (*exceeding surplus protection*).
 
-### 5. 📑 Laporan & Ekspor Data (Reports)
-- Visualisasi grafik distribusi alokasi dan pengeluaran.
-- Ekspor ringkasan laporan keuangan ke format **CSV**.
-- Fitur **Demo 1-Click Login** untuk mencoba aplikasi secara instan.
+### 5. 📑 Unified Ledger & Data Export
+- Comprehensive **Unified Ledger** merging incomes, expenses, and investment allocations chronologically.
+- **Export to CSV** for offline spreadsheets, audits, and tax preparation.
+- **1-Click Demo Login** button for instant sandbox evaluation.
 
 ---
 
-## 📐 Formula Finansial
+## 📐 Financial Logic Architecture
 
 ```text
 ┌────────────────────────────────────────────────────────┐
@@ -57,13 +58,13 @@ Fitur unggulan untuk mengalokasikan sisa uang lebih (surplus):
                                     │
        ┌────────────────────────────┴───────────────────────────┐
        ▼                                                        ▼
-[ Financial Investment ]                                [ Skill Investment ]
- (Saham, Reksadana, Emas)                              (Buku, Kursus, Seminar)
+[ Financial Investments ]                               [ Skill Investments ]
+ (Stocks, Mutual Funds, Gold)                            (Books, Certifications, Courses)
        │                                                        │
        └────────────────────────────┬───────────────────────────┘
                                     │
                                     ▼
-           [ Remaining Unallocated Surplus (Dana Cadangan) ]
+           [ Remaining Unallocated Surplus (Emergency / Reserve) ]
 ```
 
 ---
@@ -74,45 +75,45 @@ Fitur unggulan untuk mengalokasikan sisa uang lebih (surplus):
 - **Frontend:** [Blade Templates](https://laravel.com/docs/blade), [Tailwind CSS](https://tailwindcss.com/), [Alpine.js](https://alpinejs.dev/)
 - **Build Tool:** [Vite](https://vitejs.dev/)
 - **Database:** [MySQL](https://www.mysql.com/) / [SQLite](https://sqlite.org/)
-- **Auth & Starter:** [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze)
+- **Authentication:** [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze)
 - **Testing:** [PHPUnit](https://phpunit.de/)
 
 ---
 
-## 🚀 Panduan Instalasi Lokal (Getting Started)
+## 🚀 Getting Started
 
-### Prasyarat
-- PHP >= 8.3
+### Prerequisites
+- PHP >= 8.3 with required extensions (pdo, mbstring, openssl)
 - Composer
 - Node.js & NPM
-- MySQL / MariaDB (atau Laragon)
+- MySQL / MariaDB (or Laragon / XAMPP)
 
-### Langkah-langkah
+### Installation Steps
 
-1. **Clone repository:**
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/Akbardwi123/money-flow.git
    cd money-flow
    ```
 
-2. **Install dependensi PHP & Node:**
+2. **Install PHP and Node dependencies:**
    ```bash
    composer install
    npm install
    ```
 
-3. **Salin konfigurasi environment:**
+3. **Set up the environment file:**
    ```bash
    cp .env.example .env
    ```
 
-4. **Generate Application Key:**
+4. **Generate the application key:**
    ```bash
    php artisan key:generate
    ```
 
-5. **Konfigurasi Database di `.env`:**
-   Sesuaikan konfigurasi database:
+5. **Configure your Database in `.env`:**
+   Adjust database credentials according to your local environment:
    ```env
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
@@ -122,37 +123,37 @@ Fitur unggulan untuk mengalokasikan sisa uang lebih (surplus):
    DB_PASSWORD=
    ```
 
-6. **Jalankan Migrasi & Seeder Database:**
+6. **Run database migrations and seeders:**
    ```bash
    php artisan migrate:fresh --seed
    ```
 
-7. **Build asset frontend & Jalankan Server:**
+7. **Compile frontend assets and start the application:**
    ```bash
    npm run build
    php artisan serve
    ```
-   Aplikasi siap diakses melalui: [http://localhost:8000](http://localhost:8000)
+   Open your browser and navigate to: [http://localhost:8000](http://localhost:8000)
 
 ---
 
-## 🧪 Menjalankan Pengujian (Testing)
+## 🧪 Running Automated Tests
 
-Proyek ini telah dilengkapi dengan suite Feature Test:
+The application is thoroughly covered by automated feature and unit tests:
 ```bash
 php artisan test
 ```
 
 ---
 
-## 👤 Akun Uji Coba (Demo Credentials)
+## 👤 Demo Credentials
 
-Gunakan tombol **Demo Login** di halaman awal atau kredensial default seeder:
+You can use the **Quick Demo Login** button on the authentication page or use the default seeded account:
 - **Email:** `user@moneyflow.test`
 - **Password:** `password`
 
 ---
 
-## 📄 Lisensi
+## 📄 License
 
-Proyek ini berada di bawah lisensi [MIT License](LICENSE).
+This open-source project is licensed under the [MIT License](LICENSE).
