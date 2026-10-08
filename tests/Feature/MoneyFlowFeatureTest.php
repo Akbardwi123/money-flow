@@ -229,5 +229,12 @@ class MoneyFlowFeatureTest extends TestCase
         $csvResponse = $this->actingAs($user)->get('/reports/export?year=2026&month=10');
         $csvResponse->assertStatus(200);
         $this->assertEquals('text/csv; charset=UTF-8', $csvResponse->headers->get('Content-Type'));
+
+        $excelResponse = $this->actingAs($user)->get('/reports/export-excel?year=2026&month=10');
+        $excelResponse->assertStatus(200);
+        $this->assertEquals(
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            $excelResponse->headers->get('Content-Type')
+        );
     }
 }

@@ -46,6 +46,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // 5. Dashboard Portofolio & Laporan
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
     Route::get('/reports/export', [ReportController::class, 'exportCsv'])->name('reports.export');
+    Route::get('/reports/export-excel', [ReportController::class, 'exportExcel'])->name('reports.export.excel');
 
     // Profile Settings
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
