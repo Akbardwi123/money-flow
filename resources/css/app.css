@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        background-color: #070a13;
+        color: #f1f5f9;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Custom sleek dark scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #070a13;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #334155;
+    }
+}
+
+@layer utilities {
+    .font-mono-num {
+        font-family: 'JetBrains Mono', monospace;
+        font-variant-numeric: tabular-nums;
+    }
+
+    /* Sleek fintech glass card */
+    .fintech-card {
+        background: rgba(14, 20, 36, 0.75);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .fintech-card:hover {
+        border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .fintech-card-glow {
+        background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.06), transparent 70%), rgba(14, 20, 36, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.15), 0 10px 40px -10px rgba(0, 0, 0, 0.7);
+    }
+
+    .fintech-input {
+        background: rgba(11, 15, 25, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #f8fafc;
+        transition: all 0.2s ease;
+    }
+
+    .fintech-input:focus {
+        border-color: #10b981;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+        background: rgba(14, 20, 36, 0.95);
+    }
+
+    /* Gradient text utility */
+    .text-gradient-emerald {
+        background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-cyan {
+        background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 50%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-indigo {
+        background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #6366f1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
